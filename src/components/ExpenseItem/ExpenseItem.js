@@ -1,14 +1,16 @@
 import './ExpenseItem.css';
-function ExpenseItem()
+import Card from '../Card/Card'
+import ExpenseDate from '../ExpenseDate/ExpenseDate';
+function ExpenseItem(props)
 {
     return(
-        <div className="expense-item">
-            <div className="expense-date"> March 27 2022</div>
+        <Card className="expense-item">
+            <ExpenseDate date= {props.date}/>
             <div className="expense-desc">
-                <h2 className="expense-title"> Car Insurance</h2>
-                <div className="expense-amt"> $478.87</div>
+                <h2 className="expense-title"> {props.title}</h2>
+                <div className="expense-amt"> ${props.amount} </div>
             </div>
-        </div>
+        </Card>
     );
 }
 export default ExpenseItem;
